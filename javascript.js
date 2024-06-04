@@ -8,11 +8,8 @@ function getComputerChoice() {
 function getHumanChoice() {
     let inputChoice = prompt("Make your choice: rock, paper or scissors: ");
     let inputChoiceLower = inputChoice.toLowerCase();
-    if (inputChoiceLower === "rock" || inputChoiceLower === "paper" || inputChoiceLower === "scissors") {
-        return inputChoiceLower
-    } else {
-        return "Wrong input!"
-    }
+    return inputChoiceLower
+ 
 }
 
 let humanScore = 0;
@@ -20,23 +17,31 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice == "rock") {
-        return "Draw."
+        return `Draw. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }  else if (humanChoice === "rock" && computerChoice == "paper") {
-        return "Paper beats rock, you loose."
+        computerScore = ++computerScore
+        return `Paper beats rock, you loose. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }  else if (humanChoice === "rock" && computerChoice == "scissors") {
-        return "Rock beats scissors, you win."
+        humanScore = ++humanScore
+        return `Rock beats scissors, you win. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }  else if (humanChoice === "paper" && computerChoice == "rock") {
-        return "Paper beats rock, you win."
+        humanScore = ++humanScore
+        return `Paper beats rock, you win. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }  else if (humanChoice === "paper" && computerChoice == "paper") {
-        return "Draw."
+        return `Draw. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }   else if (humanChoice === "paper" && computerChoice == "scissors") {
-        return "Scissors beats paper, you loose."
+        computerScore = ++computerScore
+        return `Scissors beats paper, you loose. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }  else if (humanChoice === "scissors" && computerChoice == "rock") {
-        return "Rock beats scissors, you loose."
+        computerScore = ++computerScore
+        return `Rock beats scissors, you loose. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }  else if (humanChoice === "scissors" && computerChoice == "paper") {
-        return "Scissors beats paper, you win."
+        humanScore = ++humanScore
+        return `Scissors beats paper, you win. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
     }   else if (humanChoice === "scissors" && computerChoice == "scissors") {
-        return "Draw."
+        return `Draw. Score -> Human: ${humanScore} vs Computer: ${computerScore}`
+    }   else {
+        return "Wrong input!"
     }
 }
 const humanSelection = getHumanChoice();

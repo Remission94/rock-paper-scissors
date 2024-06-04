@@ -44,10 +44,38 @@ function playRound(humanChoice, computerChoice) {
         return "Wrong input!"
     }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection;
+let computerSelection;
 
-console.log(`${humanSelection}     ${computerSelection}`)
+function playGame() {  
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(`Player: ${humanSelection} vs Computer: ${computerSelection}`);
+    console.log(playRound(humanSelection, computerSelection));
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(`Player: ${humanSelection} vs Computer: ${computerSelection}`);
+    console.log(playRound(humanSelection, computerSelection));
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(`Player: ${humanSelection} vs Computer: ${computerSelection}`);
+    console.log(playRound(humanSelection, computerSelection));
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(`Player: ${humanSelection} vs Computer: ${computerSelection}`);
+    console.log(playRound(humanSelection, computerSelection));
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    console.log(`Player: ${humanSelection} vs Computer: ${computerSelection}`);
+    console.log(playRound(humanSelection, computerSelection));
+    
+    if (humanScore > computerScore) {
+        return "You win!"
+    } else if (computerScore > humanScore) {
+        return "You loose!" 
+    } else {
+        return "Draw!"
+    }
+}
 
-
-console.log(playRound(humanSelection, computerSelection))
+console.log(playGame())

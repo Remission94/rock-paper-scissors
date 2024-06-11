@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    font-size: 50px;
+    padding: 15px;
+    margin: 0 10px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 300px;
+    height: 100px;
+}
+
+#computerChoice {
+    background-color: orange;
+}
+
+.result,
+.game {
+    font-size: 50px;
+}
+
+.game {
+    margin: 50px 0;
+}

@@ -9,6 +9,9 @@ function playRound(humanChoice, computerChoice) {
     let game = document.querySelector(".game")
     let computerDisplay = document.querySelector("#computerChoice")
 
+    if (computerScore == 5 || humanScore == 5) {
+        window.location.reload()
+    } else {
     if (humanChoice === "rock" && computerChoice == "rock") {
         game.textContent = "Draw"
         game.style.color = "black"
@@ -57,14 +60,14 @@ function playRound(humanChoice, computerChoice) {
     scoreHuman.textContent = humanScore
 
     if (computerScore == 5) {
-        game.textContent = "You lost the game, refresh the page to start again!"
+        game.textContent = "You lost the game, press any button to start again!"
         game.style.color = "red"
     } else if (humanScore == 5) {
-        game.textContent = "You won the game, refresh the page to start again!"
+        game.textContent = "You won the game, press any button to start again!"
         game.style.color = "green"
     }
 }
-
+}
 
 let humanScore = 0;
 let computerScore = 0;
